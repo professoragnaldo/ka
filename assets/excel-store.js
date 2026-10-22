@@ -46,7 +46,7 @@ window.OrbitaExcel = class OrbitaExcel {
       const prior=wb.getWorksheet(name);if(prior)wb.removeWorksheet(prior.id);
       const sheet=wb.addWorksheet(name);sheet.columns=fields.map(([key,header])=>({key,header,width:key==='id'||key.endsWith('Id')?45:key==='notas'?45:24}));
       data[name].forEach(r=>sheet.addRow(r));sheet.views=[{state:'frozen',ySplit:1}];sheet.autoFilter={from:'A1',to:{row:1,column:fields.length}};
-      sheet.getRow(1).font={bold:true,color:{argb:'FFFFFFFF'}};sheet.getRow(1).fill={type:'pattern',pattern:'solid',fgColor:{argb:'FF285C4D'}};
+      sheet.getRow(1).font={bold:true,color:{argb:'FFFFFFFF'}};sheet.getRow(1).fill={type:'pattern',pattern:'solid',fgColor:{argb:'FF2563EB'}};
       const col=fields.findIndex(([key])=>key==='valor');if(col>=0)sheet.getColumn(col+1).numFmt='"R$" #,##0.00';
     }
   }
