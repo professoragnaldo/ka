@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Órbita · CRM local</title>
+<link rel="stylesheet" href="vendor/bootstrap.min.css"><link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<aside class="sidebar">
+<a href="#inicio" class="brand"><span class="brand-symbol">◉</span> órbita<span class="brand-dot">.</span></a>
+<div class="workspace-label">SEU ESPAÇO DE VENDAS</div>
+<nav aria-label="Navegação principal">
+<a href="#inicio" data-page="inicio"><span>◫</span> Visão geral</a>
+<a href="#funil" data-page="funil"><span>▥</span> Funil de vendas</a>
+<div class="nav-label">RELACIONAMENTOS</div>
+<a href="#prospects" data-page="prospects"><span>◎</span> Prospects <small id="prospect-count">0</small></a>
+<a href="#clientes" data-page="clientes"><span>♙</span> Clientes</a>
+<div class="nav-label">NEGÓCIOS</div>
+<a href="#oportunidades" data-page="oportunidades"><span>◇</span> Oportunidades</a>
+<a href="#propostas" data-page="propostas"><span>▤</span> Propostas</a>
+<a href="#faturas" data-page="faturas"><span>▧</span> Faturas</a>
+</nav>
+<div class="sidebar-bottom"><span class="local-light"></span> 100% local e offline<p>Seus contatos. Seu computador.</p><button id="help" class="btn btn-sm btn-outline-light">Como salvar meus dados</button></div>
+</aside>
+<div class="main-shell">
+<header class="topbar"><div><span class="text-muted">Workspace</span><span class="breadcrumb-slash">/</span><span id="breadcrumb">Visão geral</span></div><span class="local-tag">● Ambiente local</span></header>
+<main>
+<div class="page-heading"><div><div class="eyebrow">MENOS PLANILHAS ABERTAS. MAIS CONEXÕES.</div><h1 id="page-title">Seu próximo negócio começa aqui.</h1><p id="page-subtitle">Acompanhe cada conversa, da primeira conexão à conquista.</p></div><button class="btn btn-primary" id="new-record">+ Novo prospect</button></div>
+<div class="file-bar"><div><span class="file-icon">▦</span><div><strong id="file-name">Sua base de vendas</strong><small id="save-status" role="status">Importe um Excel ou comece cadastrando um prospect.</small></div></div><div class="file-actions"><button id="import" class="btn btn-light">↑ Importar Excel</button><button id="export" class="btn btn-dark">↓ Exportar Excel</button></div></div>
+<input type="file" id="file-input" accept=".xlsx" hidden>
+<div id="notice" class="alert d-none" role="alert"></div>
+<div id="content"></div>
+<footer>Feito para aproximar pessoas e bons negócios.<span>Órbita CRM · Sem servidor. Sem nuvem.</span></footer>
+</main>
+</div>
+<div class="modal fade" id="editor" tabindex="-1" aria-labelledby="editor-title" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><form id="record-form"><div class="modal-header"><h2 class="modal-title fs-5" id="editor-title"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body" id="editor-fields"></div><div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button><button type="submit" class="btn btn-primary">Salvar</button></div></form></div></div></div>
+<div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmation-title" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="confirmation-title">Confirmar ação</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body" id="confirmation-text"></div><div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">Cancelar</button><button class="btn btn-primary" id="confirm-action">Confirmar</button></div></div></div></div>
+<script src="vendor/jquery.min.js"></script><script src="vendor/bootstrap.bundle.min.js"></script><script src="vendor/exceljs.min.js"></script><script src="assets/app.js"></script>
+</body></html>
