@@ -86,14 +86,27 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 @media(max-width:1150px){.sidebar{width:200px;padding-left:14px;padding-right:14px}.main-shell{margin-left:200px}main{padding:26px 24px}.topbar{padding:0 24px}.stats{gap:10px}.stat{padding:16px}.stat-value{font-size:24px}.pipeline{gap:6px}.stage{padding:12px}.stage-name{font-size:10px}.page-heading h1{font-size:26px}}
 @media(max-width:800px){.sidebar{position:static;width:100%;padding:14px 18px}.brand{font-size:27px}.brand-symbol{font-size:30px}.workspace-label,.nav-label,.sidebar-bottom{display:none}nav{display:flex;overflow-x:auto;gap:5px;margin-top:12px}nav a{flex-shrink:0;padding:9px;font-size:11px;gap:6px}nav a span{font-size:16px}nav small{display:none}.main-shell{margin:0}.topbar{height:50px;padding:0 20px}main{padding:25px 18px}.eyebrow{font-size:8px;letter-spacing:1px}.page-heading{align-items:flex-start}.page-heading h1{font-size:25px}.page-heading .btn{font-size:10px;padding:9px}.stats{grid-template-columns:repeat(2,1fr)}.pipeline{grid-template-columns:repeat(5,minmax(145px,1fr));overflow-x:auto;padding-bottom:8px}.file-bar{align-items:flex-start;flex-direction:column}.file-actions{align-self:flex-end}.panel-header{padding:15px;flex-wrap:wrap}.toolbar{flex-wrap:wrap}footer{flex-direction:column}.welcome-note{align-items:flex-start}.stat-value{font-size:25px}.table th,.table td{padding:12px}}
 @media print{.sidebar,.topbar,.page-heading,.file-bar,.actions,footer,.toolbar,#notice{display:none!important}.main-shell{margin:0}main{padding:0}.panel{border:0}.table{font-size:12px}}
+[hidden]{display:none!important}.auth-view{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}.auth-intro{background:#163e35;padding:55px 11%;color:#dce8ce;display:flex;flex-direction:column;justify-content:space-between;min-height:100vh}.auth-intro h1{font-size:46px;line-height:1.16;color:#f4f7ec;margin:24px 0;letter-spacing:-1.6px}.auth-intro .eyebrow{color:#b2c59c;font-size:10px}.auth-intro p{font-size:16px;line-height:1.8;color:#aac1b0;max-width:370px}.auth-intro small{color:#94ad96;letter-spacing:2px;font-size:10px}.auth-flow{margin-top:45px;font-size:11px;color:#dce8ce;display:flex;gap:12px;flex-wrap:wrap}.auth-flow span{color:#79957e}.auth-card{width:min(480px,100%);align-self:center;justify-self:center;padding:40px}.auth-card h2{color:#244d3d;font-size:29px;letter-spacing:-1px;margin:14px 0}.auth-card>p{font-size:13px;line-height:1.7}.auth-file{background:#edf1e7;padding:18px;border-radius:9px;margin:20px 0 24px;overflow-wrap:anywhere}.auth-file strong{font-size:12px}.auth-footnote{font-size:10px!important;color:#8a9580;margin-top:25px}.auth-card .form-control{padding:12px}.session-actions{display:flex;align-items:center;gap:12px}.session-actions .btn{font-size:10px;padding:6px 12px}.dashboard-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}.dashboard-toolbar h2{font-size:17px;margin:0}.dashboard-toolbar p{font-size:11px;color:#8d9783;margin:7px 0}.dashboard-filter{display:flex;align-items:end;gap:10px}.dashboard-filter label{font-size:10px;color:#73856b}.dashboard-filter input{font-size:11px;margin-top:5px;padding:8px}.dashboard-filter .btn{font-size:10px;padding:9px 12px}.dashboard-stats{grid-template-columns:repeat(3,1fr)}.dashboard-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}.chart-note{font-size:10px;color:#88947c;line-height:1.7;margin:7px 0 0}.chart-legend{display:flex;gap:10px;font-size:9px;white-space:nowrap}.chart-legend span:first-child{color:#a7b993}.chart-legend span:last-child{color:#285c4d}.monthly-chart{display:flex;gap:14px;padding:22px 25px 12px;height:215px}.month-group{flex:1;min-width:0;text-align:center;font-size:9px;color:#859079}.month-bars{height:150px;display:flex;gap:5px;align-items:end;justify-content:center;border-bottom:1px solid #e7ecdf;margin-bottom:10px}.bar{width:28%;max-width:26px;border-radius:4px 4px 0 0}.billed{background:#b2c29a}.received{background:#467963}.chart-details{font-size:10px;color:#74896b;border-top:1px solid #edf1e6}.chart-details summary{padding:12px 22px}.outcome-chart{padding:24px}.outcome-row{margin-bottom:24px}.outcome-row>div:first-child{display:flex;justify-content:space-between;font-size:12px;margin-bottom:11px}.outcome-track{height:9px;background:#edf1e7;border-radius:8px;overflow:hidden}.outcome-track i{display:block;height:100%;border-radius:8px}
+@media(max-width:1100px){.dashboard-toolbar{align-items:start;flex-direction:column}.dashboard-grid{grid-template-columns:1fr}.auth-intro{padding:45px 10%}.auth-intro h1{font-size:37px}.auth-card{padding:30px}.dashboard-grid .panel-header{flex-wrap:wrap}}
+@media(max-width:650px){.auth-view{grid-template-columns:1fr}.auth-intro{min-height:auto;padding:24px}.auth-intro>div:not(.brand),.auth-intro>small{display:none}.auth-card{padding:30px 24px}.dashboard-stats{grid-template-columns:repeat(2,1fr)}.dashboard-filter{flex-wrap:wrap}.dashboard-filter label{flex:1}.dashboard-filter input{width:100%;min-width:120px}.dashboard-stats .stat-value{font-size:22px}.dashboard-grid{gap:16px}.monthly-chart{padding:22px 15px 12px;gap:6px}.auth-card .eyebrow{margin-top:10px}}
 
 </style>
 </head>
 <body>
+<section id="auth-view" class="auth-view">
+<div class="auth-intro"><div class="brand"><span class="brand-symbol">◉</span> órbita<span class="brand-dot">.</span></div><div><div class="eyebrow">SEU CRM. SEU EXCEL.</div><h1>Boas conexões.<br>Grandes oportunidades.</h1><p>Da primeira conversa ao pagamento, com seus dados na sua pasta.</p><div class="auth-flow">Prospect <span>→</span> Cliente <span>→</span> Proposta <span>→</span> Fatura</div></div><small>Local · Offline · Sem servidor</small></div>
+<div class="auth-card"><div class="eyebrow">BEM-VINDO AO SEU ESPAÇO</div><h2 id="auth-title">Entre no seu CRM</h2><p class="text-muted">Abra sua planilha e entre com o usuário cadastrado nela.</p>
+<div id="auth-notice" class="alert alert-info" role="status">Use Chrome ou Edge no computador para gravar diretamente no Excel.</div>
+<div class="auth-file"><strong id="auth-file-name">Nenhuma planilha selecionada</strong><div class="d-flex gap-2 mt-3"><button type="button" id="open-excel" class="btn btn-primary">Abrir Excel</button><button type="button" id="create-excel" class="btn btn-light">Criar Excel</button></div></div>
+<form id="login-form"><div class="mb-3"><label for="login-name" class="form-label">Login</label><input id="login-name" name="login" class="form-control" autocomplete="username" maxlength="120" required></div><div class="mb-3"><label for="login-password" class="form-label">Senha</label><input id="login-password" name="password" class="form-control" type="password" autocomplete="current-password" maxlength="1000" required></div><div id="setup-fields" hidden><div class="mb-3"><label for="login-display" class="form-label">Seu nome</label><input id="login-display" class="form-control" maxlength="120" autocomplete="name"></div><div class="mb-3"><label for="login-confirm" class="form-label">Confirme a senha</label><input id="login-confirm" class="form-control" type="password" autocomplete="new-password"></div></div><button id="login-submit" class="btn btn-primary w-100" disabled>Entrar</button></form>
+<p class="auth-footnote">O login libera a interface. O arquivo Excel continua acessível a quem tiver permissão na pasta.</p></div>
+</section>
+<div id="app-view" hidden>
 <aside class="sidebar">
 <a href="#inicio" class="brand"><span class="brand-symbol">◉</span> órbita<span class="brand-dot">.</span></a>
 <div class="workspace-label">SEU ESPAÇO DE VENDAS</div>
 <nav aria-label="Navegação principal">
+<a href="#dashboard" data-page="dashboard"><span>▥</span> Dashboard</a>
 <a href="#inicio" data-page="inicio"><span>◫</span> Visão geral</a>
 <a href="#funil" data-page="funil"><span>▥</span> Funil de vendas</a>
 <div class="nav-label">RELACIONAMENTOS</div>
@@ -107,15 +120,16 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 <div class="sidebar-bottom"><span class="local-light"></span> 100% local e offline<p>Seus contatos. Seu computador.</p><button id="help" class="btn btn-sm btn-outline-light">Como salvar meus dados</button></div>
 </aside>
 <div class="main-shell">
-<header class="topbar"><div><span class="text-muted">Workspace</span><span class="breadcrumb-slash">/</span><span id="breadcrumb">Visão geral</span></div><span class="local-tag">● Ambiente local</span></header>
+<header class="topbar"><div><span class="text-muted">Workspace</span><span class="breadcrumb-slash">/</span><span id="breadcrumb">Visão geral</span></div><div class="session-actions"><span id="session-user" class="local-tag"></span><button id="logout" class="btn btn-light">Sair</button></div></header>
 <main>
 <div class="page-heading"><div><div class="eyebrow">MENOS PLANILHAS ABERTAS. MAIS CONEXÕES.</div><h1 id="page-title">Seu próximo negócio começa aqui.</h1><p id="page-subtitle">Acompanhe cada conversa, da primeira conexão à conquista.</p></div><button class="btn btn-primary" id="new-record">+ Novo prospect</button></div>
-<div class="file-bar"><div><span class="file-icon">▦</span><div><strong id="file-name">Sua base de vendas</strong><small id="save-status" role="status">Importe um Excel ou comece cadastrando um prospect.</small></div></div><div class="file-actions"><button id="import" class="btn btn-light">↑ Importar Excel</button><button id="export" class="btn btn-dark">↓ Exportar Excel</button></div></div>
-<input type="file" id="file-input" accept=".xlsx" hidden>
+<div class="file-bar"><div><span class="file-icon">▦</span><div><strong id="file-name">Sua base de vendas</strong><small id="save-status" role="status">As alterações são gravadas no arquivo aberto.</small></div></div><div class="file-actions"><button id="import" class="btn btn-light">Trocar Excel</button><button id="export" class="btn btn-dark">↓ Baixar cópia</button></div></div>
+
 <div id="notice" class="alert d-none" role="alert"></div>
 <div id="content"></div>
 <footer>Feito para aproximar pessoas e bons negócios.<span>Órbita CRM · Sem servidor. Sem nuvem.</span></footer>
 </main>
+</div>
 </div>
 <div class="modal fade" id="editor" tabindex="-1" aria-labelledby="editor-title" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><form id="record-form"><div class="modal-header"><h2 class="modal-title fs-5" id="editor-title"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body" id="editor-fields"></div><div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button><button type="submit" class="btn btn-primary">Salvar</button></div></form></div></div></div>
 <div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmation-title" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="confirmation-title">Confirmar ação</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body" id="confirmation-text"></div><div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">Cancelar</button><button class="btn btn-primary" id="confirm-action">Confirmar</button></div></div></div></div>
@@ -178,10 +192,94 @@ https://github.com/nodeca/pako/blob/main/LICENSE
  */function n(e){return e>=65&&e<=90||95===e||e>=97&&e<=122||e>=192&&e<=214||e>=216&&e<=246||e>=248&&e<=767||e>=880&&e<=893||e>=895&&e<=8191||e>=8204&&e<=8205||e>=8304&&e<=8591||e>=11264&&e<=12271||e>=12289&&e<=55295||e>=63744&&e<=64975||e>=65008&&e<=65533||e>=65536&&e<=983039}Object.defineProperty(r,"__esModule",{value:!0}),r.NC_NAME_START_CHAR="A-Z_a-z\xc0-\xd6\xd8-\xf6\xf8-\u02ff\u0370-\u037d\u037f-\u1fff\u200c-\u200d\u2070-\u218f\u2c00-\u2fef\u3001-\ud7ff\uf900-\ufdcf\ufdf0-\ufffd\ud800\udc00-\udb7f\udfff",r.NC_NAME_CHAR="-"+r.NC_NAME_START_CHAR+".0-9\xb7\u0300-\u036f\u203f-\u2040",r.NC_NAME_START_CHAR_RE=new RegExp("^["+r.NC_NAME_START_CHAR+"]$","u"),r.NC_NAME_CHAR_RE=new RegExp("^["+r.NC_NAME_CHAR+"]$","u"),r.NC_NAME_RE=new RegExp("^["+r.NC_NAME_START_CHAR+"]["+r.NC_NAME_CHAR+"]*$","u"),r.isNCNameStartChar=n,r.isNCNameChar=function(e){return n(e)||45===e||46===e||e>=48&&e<=57||183===e||e>=768&&e<=879||e>=8255&&e<=8256}},{}]},{},[15])(15)}));
 //# sourceMappingURL=exceljs.min.js.map
 </script><script>
+/* Workbook-backed persistence. No network, server or credential cache. */
+'use strict';
+window.OrbitaExcel = class OrbitaExcel {
+  constructor(schemas, validate) {this.schemas=schemas;this.validate=validate;this.handle=null;this.bytes=null;this.signature=null;this.user=null;this.needsSetup=false;this.newFile=false;this.saving=false;}
+  static fileTypes=[{description:'Planilha Excel do CRM',accept:{'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':['.xlsx']}}];
+  static supported(){return !!(window.showOpenFilePicker&&window.showSaveFilePicker&&crypto.subtle);}
+  async digest(bytes){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');}
+  async readFile(){const file=await this.handle.getFile();if(!/\.xlsx$/i.test(file.name)||file.size>10*1024*1024)throw Error('Selecione um .xlsx com até 10 MB.');return new Uint8Array(await file.arrayBuffer());}
+  async workbook(bytes=this.bytes){const wb=new ExcelJS.Workbook();if(bytes?.length)await wb.xlsx.load(bytes);return wb;}
+  readData(wb){const data={};let count=0;
+    for(const [type,fields] of Object.entries(this.schemas)){
+      const sheet=wb.getWorksheet(type);if(!sheet)throw Error('Aba obrigatória ausente: '+type+'. Use uma planilha exportada pelo Órbita ou crie uma nova.');
+      const columns=new Map();sheet.getRow(1).eachCell((cell,index)=>{if(typeof cell.value!=='string'||columns.has(cell.value))throw Error(type+': cabeçalho inválido ou duplicado.');columns.set(cell.value,index);});
+      for(const [,header]of fields)if(!columns.has(header))throw Error(type+': coluna ausente: '+header);
+      // Unknown columns would be lost when regenerating CRM sheets: reject instead.
+      for(const header of columns.keys())if(!fields.some(([,h])=>h===header))throw Error(type+': coluna não reconhecida: '+header+'. Preserve os dados extras em outra aba.');
+      data[type]=[];sheet.eachRow((row,index)=>{if(index===1)return;const r={};let any=false;
+        for(const [key,header] of fields){let value=row.getCell(columns.get(header)).value;if(value!==null&&value!==undefined&&value!=='')any=true;
+          if(value instanceof Date)value=value.toISOString().slice(0,10);
+          if(value!==null&&typeof value==='object')throw Error(type+': use valores simples, sem fórmulas ou links.');
+          r[key]=key==='valor'?(typeof value==='number'?value:NaN):value==null?'':String(value).trim();
+        }
+        if(any){data[type].push(r);if(++count>10000)throw Error('Limite de 10.000 registros por planilha.');}
+      });
+    }return this.validate(data);
+  }
+  readUsers(wb){const sheet=wb.getWorksheet('usuarios');if(!sheet)return null;
+    const headers=new Map();sheet.getRow(1).eachCell((c,i)=>{const h=String(c.value??'').trim().toLowerCase();if(headers.has(h))throw Error('usuarios: cabeçalho duplicado.');headers.set(h,i);});
+    if(!headers.has('login')||(!headers.has('senha')&&!headers.has('senhahash')))throw Error('A aba usuarios precisa de Login e Senha ou SenhaHash.');
+    const users=[],seen=new Set();sheet.eachRow((row,n)=>{if(n===1)return;const read=(h)=>{const v=headers.has(h)?row.getCell(headers.get(h)).value:null;if(v!==null&&typeof v==='object')throw Error('usuarios: use apenas células de texto simples.');return v==null?'':String(v);};
+      const login=read('login').trim();if(!login){if(row.values.some(v=>v!==null&&v!==undefined&&v!==''))throw Error('usuarios: linha sem Login.');return;}
+      if(seen.has(login.toLowerCase()))throw Error('usuarios: Login duplicado.');seen.add(login.toLowerCase());
+      const active=read('ativo').trim().toLowerCase();if(active&&!['sim','não','nao','true','false','1','0'].includes(active))throw Error('usuarios: Ativo deve ser Sim ou Não.');
+      const u={login,nome:read('nome').trim()||login,senha:read('senha'),hash:read('senhahash'),salt:read('salt'),iterations:Number(read('iteracoes')||210000),active:!['não','nao','false','0'].includes(active)};
+      if(u.hash&&(!/^[0-9a-f]{64}$/i.test(u.hash)||!/^[0-9a-f]{32}$/i.test(u.salt)||!Number.isInteger(u.iterations)||u.iterations<100000||u.iterations>1000000))throw Error('usuarios: configuração de hash inválida.');
+      if(!u.hash&&!u.senha)throw Error('usuarios: senha ausente.');users.push(u);if(users.length>1000)throw Error('Limite de 1.000 usuários.');
+    });
+    if(!users.some(u=>u.active))throw Error('Nenhum usuário ativo na aba usuarios. Ajuste a planilha no Excel.');return users;
+  }
+  async open(handle){this.handle=handle;this.user=null;this.newFile=false;this.bytes=await this.readFile();if(!this.bytes.length)throw Error('O arquivo está vazio. Use Criar Excel para uma base nova.');this.signature=await this.digest(this.bytes);const wb=await this.workbook();this.readData(wb);this.needsSetup=this.readUsers(wb)===null;}
+  async prepareNew(handle){this.handle=handle;this.user=null;this.newFile=true;this.bytes=await this.readFile();if(this.bytes.length)throw Error('Este arquivo já possui conteúdo. Para preservá-lo, use Abrir Excel ou escolha outro nome.');this.signature=await this.digest(this.bytes);this.needsSetup=true;}
+  async hash(password,salt,iterations=210000){const saltBytes=Uint8Array.from(salt.match(/../g),s=>parseInt(s,16));const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits']);return Array.from(new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2',salt:saltBytes,iterations,hash:'SHA-256'},key,256)),b=>b.toString(16).padStart(2,'0')).join('');}
+  writeData(wb,data){
+    if(Object.values(data).reduce((n,rows)=>n+rows.length,0)>10000)throw Error('Limite de 10.000 registros por planilha.');
+    for(const [name,fields]of Object.entries(this.schemas)){
+      const prior=wb.getWorksheet(name);if(prior)wb.removeWorksheet(prior.id);
+      const sheet=wb.addWorksheet(name);sheet.columns=fields.map(([key,header])=>({key,header,width:key==='id'||key.endsWith('Id')?45:key==='notas'?45:24}));
+      data[name].forEach(r=>sheet.addRow(r));sheet.views=[{state:'frozen',ySplit:1}];sheet.autoFilter={from:'A1',to:{row:1,column:fields.length}};
+      sheet.getRow(1).font={bold:true,color:{argb:'FFFFFFFF'}};sheet.getRow(1).fill={type:'pattern',pattern:'solid',fgColor:{argb:'FF285C4D'}};
+      const col=fields.findIndex(([key])=>key==='valor');if(col>=0)sheet.getColumn(col+1).numFmt='"R$" #,##0.00';
+    }
+  }
+  async writeBytes(bytes){
+    if(bytes.length>10*1024*1024)throw Error('A planilha excederia o limite de 10 MB.');
+    if(await this.handle.queryPermission({mode:'readwrite'})!=='granted')throw Error('Permissão de gravação revogada. Saia e abra o Excel novamente, autorizando a edição.');
+    if(await this.digest(await this.readFile())!==this.signature)throw Error('O Excel foi alterado fora desta sessão. Esta alteração não foi salva. Saia e reabra o arquivo para carregar a versão atual.');
+    let stream;
+    try{stream=await this.handle.createWritable({mode:'exclusive'});
+      if(await this.digest(await this.readFile())!==this.signature)throw Error('O arquivo mudou enquanto a gravação era iniciada. Reabra a planilha.');
+      await stream.write(bytes);await stream.close();
+    }catch(e){if(stream)try{await stream.abort();}catch{}throw e;}
+    this.bytes=new Uint8Array(bytes);this.signature=await this.digest(bytes);
+  }
+  async setup(login,password,name,data){if(!this.needsSetup)throw Error('Esta planilha já possui usuários.');if(!login.trim()||password.length<8)throw Error('Informe um login e uma senha de pelo menos 8 caracteres.');
+    const wb=await this.workbook();if(wb.getWorksheet('usuarios'))throw Error('Usuários já cadastrados. Reabra a planilha.');
+    if(this.newFile)this.writeData(wb,data);else this.readData(wb);
+    const salt=Array.from(crypto.getRandomValues(new Uint8Array(16)),n=>n.toString(16).padStart(2,'0')).join('');const hash=await this.hash(password,salt);
+    const users=wb.addWorksheet('usuarios');users.addRow(['Login','Nome','SenhaHash','Salt','Iteracoes','Ativo']);users.addRow([login.trim(),name.trim()||login.trim(),hash,salt,210000,'Sim']);users.getRow(1).font={bold:true};users.columns.forEach(c=>c.width=25);
+    await this.writeBytes(new Uint8Array(await wb.xlsx.writeBuffer()));this.needsSetup=false;this.newFile=false;
+  }
+  async authenticate(login,password){
+    // Re-read to honor account changes made since opening the login page.
+    const bytes=await this.readFile();const wb=await this.workbook(bytes);const users=this.readUsers(wb);if(!users)throw Error('Planilha sem aba usuarios. Reabra para configurar o primeiro acesso.');
+    const u=users.find(r=>r.active&&r.login.toLowerCase()===login.trim().toLowerCase());
+    const valid=u&&(u.hash?(await this.hash(password,u.salt,u.iterations)).toLowerCase()===u.hash.toLowerCase():u.senha===password);
+    if(!valid)throw Error('Login ou senha inválidos, ou usuário inativo.');
+    const data=this.readData(wb);this.bytes=bytes;this.signature=await this.digest(bytes);this.user={login:u.login,nome:u.nome};return data;
+  }
+  async save(data){if(!this.user)throw Error('Entre com seu login antes de gravar.');if(this.saving)throw Error('Aguarde a gravação anterior.');this.saving=true;
+    try{this.validate(data);const wb=await this.workbook();this.writeData(wb,data);await this.writeBytes(new Uint8Array(await wb.xlsx.writeBuffer()));}finally{this.saving=false;}
+  }
+  logout(){this.user=null;this.handle=null;this.bytes=null;this.signature=null;this.needsSetup=false;}
+};
+
+</script><script>
 /* Órbita CRM — opens over file://; no network requests or server. */
 'use strict';
 $(function () {
-  const KEY = 'orbita.crm.v1';
   const schemas = {
     prospects: [['id','ID'],['nome','Nome'],['empresa','Empresa'],['email','Email'],['telefone','Telefone'],['origem','Origem'],['status','Status'],['clienteId','ClienteID'],['notas','Notas'],['criadoEm','CriadoEm']],
     clientes: [['id','ID'],['nome','Nome'],['empresa','Empresa'],['email','Email'],['telefone','Telefone'],['notas','Notas'],['criadoEm','CriadoEm']],
@@ -189,10 +287,11 @@ $(function () {
     propostas: [['id','ID'],['oportunidadeId','OportunidadeID'],['titulo','Titulo'],['valor','Valor'],['validade','Validade'],['status','Status'],['notas','Notas'],['criadoEm','CriadoEm']],
     faturas: [['id','ID'],['propostaId','PropostaID'],['numero','Numero'],['valor','Valor'],['emissao','Emissao'],['vencimento','Vencimento'],['status','Status'],['pagaEm','PagaEm'],['notas','Notas'],['criadoEm','CriadoEm']]
   };
-  const names = {inicio:'Visão geral',funil:'Funil de vendas',prospects:'Prospects',clientes:'Clientes',oportunidades:'Oportunidades',propostas:'Propostas',faturas:'Faturas'};
+  const names = {dashboard:'Dashboard',inicio:'Visão geral',funil:'Funil de vendas',prospects:'Prospects',clientes:'Clientes',oportunidades:'Oportunidades',propostas:'Propostas',faturas:'Faturas'};
   const singular = {prospects:'prospect',clientes:'cliente',oportunidades:'oportunidade',propostas:'proposta',faturas:'fatura'};
   const empty = () => Object.fromEntries(Object.keys(schemas).map(k=>[k,[]]));
-  let db = empty(), page = 'inicio', query = '', filter = '', editing = null, pending = null, fileName = '', exported = '', cacheOK = true, busy = false;
+  let db = empty(), page = 'dashboard', query = '', filter = '', editing = null, pending = null, busy = false, dashFrom = '', dashTo = '';
+  const store = new OrbitaExcel(schemas,validate);
   const editor = new bootstrap.Modal(document.getElementById('editor'));
   const confirmation = new bootstrap.Modal(document.getElementById('confirmation'));
   $('#confirmation').on('show.bs.modal',()=>$('#confirm-action').prop('disabled',true)).on('shown.bs.modal',()=>$('#confirm-action').prop('disabled',false));
@@ -213,7 +312,7 @@ $(function () {
   const entity = (title,sub='') => `<div class="entity"><span class="avatar">${esc(title.slice(0,2).toUpperCase())}</span><div><span class="record-name">${esc(title)}</span>${sub?`<small>${esc(sub)}</small>`:''}</div></div>`;
   function notice(message,type='success') {$('#notice').removeClass('d-none alert-success alert-danger alert-warning alert-info').addClass('alert-'+type).text(message);}
   function confirmAction(message,fn) {$('#confirmation-title').text('Confirmar ação');$('#confirmation-text').text(message);pending=fn;confirmation.show();}
-  $('#confirm-action').on('click',function(){const fn=pending;pending=null;confirmation.hide();if(fn)fn();});
+  $('#confirm-action').on('click',async function(){if(busy)return;const fn=pending;pending=null;confirmation.hide();if(fn)await fn();});
   function validate(data) {
     const statuses={prospects:['Novo','Em contato','Convertido'],oportunidades:['Aberta','Ganha','Perdida'],propostas:['Rascunho','Enviada','Aceita','Recusada'],faturas:['Pendente','Paga']};
     const dateFields=['previsao','validade','emissao','vencimento','pagaEm','criadoEm'];
@@ -259,16 +358,16 @@ $(function () {
     }
     return data;
   }
-  function persist(){try{localStorage.setItem(KEY,JSON.stringify({version:1,data:db,fileName,exported}));cacheOK=true;}catch{cacheOK=false;}updateStatus();}
   function updateStatus(){
-    $('#file-name').text(fileName || 'Sua base de vendas');
-    let text=JSON.stringify(db)===exported?'Excel atualizado com os dados atuais.':'Alterações locais • exporte o Excel para salvar na planilha.';
-    if(!Object.values(db).some(a=>a.length)&&!exported)text='Importe um Excel ou comece cadastrando um prospect.';
-    if(!cacheOK)text='Cache indisponível. Exporte o Excel antes de fechar esta janela.';
-    $('#save-status').text(text);
+    $('#file-name').text(store.handle?.name || 'Nenhum Excel aberto');
+    $('#save-status').text(busy?'Gravando no Excel…':'Gravação automática ativa · Alterações confirmadas no arquivo.');
   }
-  function mutate(fn,message){const backup=JSON.stringify(db);try{fn();validate(db);persist();render();if(message)notice(message);$('#modal-error').remove();return true;}catch(e){db=JSON.parse(backup);notice(e.message,'danger');if(document.getElementById('editor').classList.contains('show')){$('#modal-error').remove();$('<div id="modal-error" class="alert alert-danger" role="alert"></div>').text(e.message).prependTo('#editor-fields');}return false;}}
-  try{const raw=localStorage.getItem(KEY);if(raw){const saved=JSON.parse(raw);if(saved.version!==1)throw Error('Versão de cache desconhecida.');db=validate(saved.data);fileName=saved.fileName||'';exported=saved.exported||'';}}catch(e){cacheOK=false;notice('Não foi possível recuperar o cache local. Importe seu último Excel. '+e.message,'warning');}
+  function setBusy(value){busy=value;$('#app-view button,#editor button,#confirmation button').prop('disabled',value);updateStatus();}
+  async function mutate(fn,message){if(busy||!store.user)return false;const backup=JSON.stringify(db);setBusy(true);
+    try{fn();validate(db);await store.save(db);render();if(message)notice(message+' Salvo no Excel.');$('#modal-error').remove();return true;}
+    catch(e){db=JSON.parse(backup);notice('Alteração não confirmada: '+e.message,'danger');if(document.getElementById('editor').classList.contains('show')){$('#modal-error').remove();$('<div id="modal-error" class="alert alert-danger" role="alert"></div>').text(e.message).prependTo('#editor-fields');}return false;}
+    finally{setBusy(false);}
+  }
   const statusOptions = {prospects:['Novo','Em contato','Convertido'],oportunidades:['Aberta','Ganha','Perdida'],propostas:['Rascunho','Enviada','Aceita','Recusada'],faturas:['Pendente','Paga']};
   function rowHTML(type,r) {
     let cells='',buttons='';
@@ -295,14 +394,40 @@ $(function () {
     ['Conquistados','Propostas aceitas',db.oportunidades.filter(r=>r.status==='Ganha'),'oportunidades'],
     ['Faturas','Aguardando pagamento',db.faturas.filter(r=>r.status==='Pendente'),'faturas']
   ];const max=Math.max(1,...groups.map(g=>g[2].length));return `<div class="pipeline ${detailed?'kanban':''}">${groups.map(([title,note,list,type],i)=>`<div class="stage"><div class="stage-name">${String(i+1).padStart(2,'0')} · ${title}<span>→</span></div><div class="stage-num">${list.length}</div><div class="stage-caption">${note}</div><div class="stage-progress"><i style="width:${list.length/max*100}%"></i></div>${detailed?list.map(r=>`<div class="kanban-card"><strong>${esc(r.nome||r.titulo||r.numero)}</strong><p>${r.valor?money(r.valor):esc(r.empresa||r.origem||'Novo contato')}</p><button class="btn btn-light" data-action="open" data-type="${type}" data-id="${esc(r.id)}">Abrir →</button></div>`).join('')||'<p class="stage-caption mt-3">Nenhum registro nesta etapa.</p>':''}</div>`).join('')}</div>`;}
+  function renderDashboard(){
+    const inPeriod=d=>(!dashFrom||d>=dashFrom)&&(!dashTo||d<=dashTo);
+    const opps=db.oportunidades.filter(o=>inPeriod(o.criadoEm));
+    const invoices=db.faturas.filter(f=>inPeriod(f.emissao));
+    const paid=db.faturas.filter(f=>f.status==='Paga'&&inPeriod(f.pagaEm));
+    const won=opps.filter(o=>o.status==='Ganha'),lost=opps.filter(o=>o.status==='Perdida'),open=opps.filter(o=>o.status==='Aberta');
+    const accepted=db.propostas.filter(p=>won.some(o=>o.id===p.oportunidadeId)&&p.status==='Aceita');
+    const pendingInvoices=invoices.filter(f=>f.status==='Pendente'),overdue=pendingInvoices.filter(f=>f.vencimento<today());
+    const cards=[['Recebido',money(sum(paid)),'Por data de pagamento'],['A receber',money(sum(pendingInvoices)),'Por data de emissão'],['Em atraso',money(sum(overdue)),overdue.length+' fatura(s) vencida(s)'],['Pipeline aberto',money(sum(open)),open.length+' oportunidade(s)'],['Taxa de conquista',(won.length+lost.length?(won.length/(won.length+lost.length)*100).toFixed(1).replace('.',','):'0')+'%','Ganhas ÷ encerradas no recorte'],['Ticket médio ganho',money(won.length?sum(accepted)/won.length:0),won.length+' negócio(s) ganho(s)']];
+    const end=dashTo||today();const endMonth=new Date(end.slice(0,7)+'-01T12:00:00');
+    const months=Array.from({length:6},(_,i)=>{const d=new Date(endMonth);d.setMonth(d.getMonth()-5+i);return {key:d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'),label:d.toLocaleDateString('pt-BR',{month:'short',year:'2-digit'}),billed:0,received:0};});
+    for(const m of months){m.billed=sum(invoices.filter(f=>f.emissao.startsWith(m.key)));m.received=sum(paid.filter(f=>f.pagaEm.startsWith(m.key)));}
+    const max=Math.max(1,...months.flatMap(m=>[m.billed,m.received]));
+    const top=new Map();for(const f of invoices){const p=find('propostas',f.propostaId),o=find('oportunidades',p.oportunidadeId);top.set(o.clienteId,(top.get(o.clienteId)||0)+f.valor);}
+    const leaders=[...top].sort((a,b)=>b[1]-a[1]).slice(0,5);
+    const stagesData=[['Abertas',open.length,'#b2c29a'],['Ganhas',won.length,'#467963'],['Perdidas',lost.length,'#cba18b']];
+    $('#content').html(`<div class="dashboard-toolbar"><div><h2>Seu negócio em números</h2><p>Indicadores calculados a partir do Excel aberto.</p></div><form id="dashboard-filter" class="dashboard-filter"><label>De<input type="date" id="dash-from" class="form-control" value="${esc(dashFrom)}" aria-label="Início do período"></label><label>Até<input type="date" id="dash-to" class="form-control" value="${esc(dashTo)}" aria-label="Fim do período"></label><button class="btn btn-primary">Aplicar</button><button type="button" id="dash-clear" class="btn btn-light">Todo o período</button></form></div>
+      <div class="stats dashboard-stats">${cards.map(([title,value,note])=>`<div class="stat"><div class="stat-top">${title}</div><div class="stat-value">${value}</div><small>${note}</small></div>`).join('')}</div>
+      <div class="dashboard-grid"><section class="panel"><div class="panel-header"><div><h2>Faturado × recebido</h2><p class="chart-note">6 meses até ${date(end)} · respeita o filtro de datas</p></div><div class="chart-legend"><span>● Faturado</span><span>● Recebido</span></div></div><div class="monthly-chart" role="img" aria-label="Comparativo mensal de valores faturados e recebidos. Valores detalhados na tabela abaixo.">${months.map(m=>`<div class="month-group"><div class="month-bars"><div class="bar billed" style="height:${m.billed/max*100}%" title="Faturado: ${money(m.billed)}"></div><div class="bar received" style="height:${m.received/max*100}%" title="Recebido: ${money(m.received)}"></div></div><span>${esc(m.label)}</span></div>`).join('')}</div><details class="chart-details"><summary>Ver valores por mês</summary><div class="table-responsive"><table class="table"><thead><tr><th>MÊS</th><th>FATURADO</th><th>RECEBIDO</th></tr></thead><tbody>${months.map(m=>`<tr><td>${esc(m.label)}</td><td>${money(m.billed)}</td><td>${money(m.received)}</td></tr>`).join('')}</tbody></table></div></details></section>
+      <section class="panel"><div class="panel-header"><h2>Resultado das oportunidades</h2></div><div class="outcome-chart">${stagesData.map(([label,n,color])=>`<div class="outcome-row"><div><span>${label}</span><strong>${n}</strong></div><div class="outcome-track"><i style="width:${opps.length?n/opps.length*100:0}%;background:${color}"></i></div></div>`).join('')}<p class="chart-note">Por data de criação da oportunidade. O status representa a situação atual.</p></div></section>
+      <section class="panel"><div class="panel-header"><h2>Clientes por faturamento</h2><span class="chart-note">Top 5 · emissão no período</span></div>${leaders.length?`<div class="table-responsive"><table class="table"><thead><tr><th>CLIENTE</th><th>FATURADO</th></tr></thead><tbody>${leaders.map(([key,value])=>`<tr><td>${entity(clientName(key))}</td><td>${money(value)}</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Nenhuma fatura no período.</div>'}</section>
+      <section class="panel"><div class="panel-header"><h2>Atenção aos recebimentos</h2><span class="chart-note">Pendentes no recorte de emissão</span></div>${pendingInvoices.length?`<div class="table-responsive"><table class="table"><thead><tr><th>FATURA / CLIENTE</th><th>VALOR</th><th>VENCIMENTO</th></tr></thead><tbody>${[...pendingInvoices].sort((a,b)=>a.vencimento.localeCompare(b.vencimento)).slice(0,5).map(f=>`<tr><td>${entity(f.numero,invoiceClient(f))}</td><td>${money(f.valor)}</td><td class="${f.vencimento<today()?'text-danger':''}">${date(f.vencimento)}</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Nenhum recebimento pendente neste período.</div>'}</section></div>`);
+  }
+  $('#content').on('submit','#dashboard-filter',function(event){event.preventDefault();const from=$('#dash-from').val(),to=$('#dash-to').val();if(from&&to&&from>to){notice('A data inicial deve ser anterior ou igual à data final.','danger');return;}dashFrom=from;dashTo=to;renderDashboard();}).on('click','#dash-clear',()=>{dashFrom='';dashTo='';renderDashboard();});
   function render(){
+    if(!store.user){$('#content').empty();return;}
     $('nav a').removeClass('active').filter(`[data-page="${page}"]`).addClass('active').attr('aria-current','page');$('nav a').not('.active').removeAttr('aria-current');
     $('#breadcrumb').text(names[page]);$('#prospect-count').text(db.prospects.filter(r=>r.status!=='Convertido').length);
     $('#page-title').text(page==='inicio'?'Seu próximo negócio começa aqui.':names[page]);
-    $('#page-subtitle').text(({inicio:'Acompanhe cada conversa, da primeira conexão à conquista.',funil:'Cada conexão tem um caminho. Acompanhe o seu, etapa por etapa.',prospects:'Transforme primeiras conversas em boas oportunidades.',clientes:'Quem confia no seu trabalho, sempre por perto.',oportunidades:'Dê um próximo passo em cada negociação.',propostas:'Da ideia à aprovação, com tudo organizado.',faturas:'Negócios conquistados, pagamentos acompanhados.'})[page]);
-    const target=['inicio','funil','faturas'].includes(page)?'prospects':page;
+    $('#page-subtitle').text(({dashboard:'Os números que ajudam você a decidir seu próximo passo.',inicio:'Acompanhe cada conversa, da primeira conexão à conquista.',funil:'Cada conexão tem um caminho. Acompanhe o seu, etapa por etapa.',prospects:'Transforme primeiras conversas em boas oportunidades.',clientes:'Quem confia no seu trabalho, sempre por perto.',oportunidades:'Dê um próximo passo em cada negociação.',propostas:'Da ideia à aprovação, com tudo organizado.',faturas:'Negócios conquistados, pagamentos acompanhados.'})[page]);
+    const target=['dashboard','inicio','funil','faturas'].includes(page)?'prospects':page;
     $('#new-record').toggle(page!=='faturas').text('+ Nov'+(target==='prospects'||target==='clientes'?'o ':'a ')+singular[target]).data('type',target);
-    if(page==='inicio'){
+    if(page==='dashboard'){renderDashboard();}
+    else if(page==='inicio'){
       $('#content').html(stats()+`<div class="section-heading"><div><h2>Seu funil, em movimento</h2><p>Um panorama de cada etapa do relacionamento.</p></div><a href="#funil">Explorar funil →</a></div>`+stages()+`<div class="panel"><div class="panel-header"><h2>Últimas conexões</h2><a href="#prospects" class="btn btn-link">Ver prospects →</a></div>${table('prospects',[...db.prospects].reverse().slice(0,5))}</div>`+(!Object.values(db).some(a=>a.length)?'<div class="welcome-note"><div><strong>Um espaço novo. Muitas possibilidades.</strong><p>Explore o CRM com uma base de exemplo antes de começar.</p></div><button class="btn btn-light" data-action="demo">Experimentar com exemplos →</button></div>':''));
     }else if(page==='funil'){$('#content').html(stats()+stages(true)+`<p class="privacy-text">Oportunidades saem da coluna inicial quando recebem propostas em aberto. Negócios ganhos e suas faturas aparecem em colunas distintas. O funil não inclui negócios perdidos, propostas recusadas ou faturas pagas.</p>`);}
     else{
@@ -343,18 +468,20 @@ $(function () {
   function showConvert(key){const p=find('prospects',key);if(!p||p.status==='Convertido')return;editing={type:'prospects',key,mode:'convert'};$('#editor-title').text('Converter prospect');$('#editor-fields').html(`<p class="form-note">${esc(p.nome)} será convertido em cliente, com os dados de contato e uma nova oportunidade.</p>`+input(['titulo','Título da oportunidade','text',true],p.empresa?'Negócio com '+p.empresa:'')+input(['valor','Valor estimado (R$)','number',true])+input(['previsao','Previsão de fechamento','date']));editor.show();}
   function accept(key){const p=find('propostas',key);if(!p||!['Rascunho','Enviada'].includes(p.status))return;editing={type:'propostas',key,mode:'win'};$('#editor-title').text('Conquistar negócio e gerar fatura');$('#editor-fields').html(`<p class="form-note">A proposta “${esc(p.titulo)}” será aceita por ${money(p.valor)}. A oportunidade será marcada como ganha. Outras propostas deste negócio serão recusadas.</p>`+input(['vencimento','Vencimento da fatura','date',true],plusDays(30)));editor.show();}
   $('#editor').on('shown.bs.modal',()=>$('#editor-fields').find('input:not([readonly]),select:not([disabled])').first().trigger('focus'));
-  $('#record-form').on('submit',function(event){event.preventDefault();if(!this.reportValidity())return;const values=Object.fromEntries(new FormData(this).entries());const {type,key,mode}=editing;const old=key?find(type,key):null;
-    if(mode==='convert')mutate(()=>{if(!old||old.status==='Convertido')throw Error('Prospect já convertido.');const c={...Object.fromEntries(schemas.clientes.map(([k])=>[k,old[k]||''])),id:id('CLI'),criadoEm:today()};db.clientes.push(c);db.oportunidades.push({id:id('OP'),clienteId:c.id,titulo:values.titulo,valor:Number(values.valor),previsao:values.previsao,status:'Aberta',notas:'',criadoEm:today()});old.status='Convertido';old.clienteId=c.id;},'Prospect convertido! Cliente e oportunidade criados.');
-    else if(mode==='win')mutate(()=>{if(!old||!['Rascunho','Enviada'].includes(old.status))throw Error('Proposta já encerrada.');if(values.vencimento<today())throw Error('O vencimento não pode ser anterior à emissão.');old.status='Aceita';const o=find('oportunidades',old.oportunidadeId);o.status='Ganha';db.propostas.filter(p=>p.oportunidadeId===o.id&&p.id!==old.id&&['Rascunho','Enviada'].includes(p.status)).forEach(p=>p.status='Recusada');let n=1;while(db.faturas.some(f=>f.numero===`FAT-${String(n).padStart(4,'0')}`))n++;db.faturas.push({id:id('FAT'),propostaId:old.id,numero:`FAT-${String(n).padStart(4,'0')}`,valor:old.valor,emissao:today(),vencimento:values.vencimento,status:'Pendente',pagaEm:'',notas:'',criadoEm:today()});},'Negócio conquistado! Fatura criada, pronta para acompanhar.');
-    else mutate(()=>{
+  $('#record-form').on('submit',async function(event){event.preventDefault();if(!this.reportValidity())return;const values=Object.fromEntries(new FormData(this).entries());const {type,key,mode}=editing;const old=key?find(type,key):null;
+    let saved;
+    if(mode==='convert')saved=await mutate(()=>{if(!old||old.status==='Convertido')throw Error('Prospect já convertido.');const c={...Object.fromEntries(schemas.clientes.map(([k])=>[k,old[k]||''])),id:id('CLI'),criadoEm:today()};db.clientes.push(c);db.oportunidades.push({id:id('OP'),clienteId:c.id,titulo:values.titulo,valor:Number(values.valor),previsao:values.previsao,status:'Aberta',notas:'',criadoEm:today()});old.status='Convertido';old.clienteId=c.id;},'Prospect convertido! Cliente e oportunidade criados.');
+    else if(mode==='win')saved=await mutate(()=>{if(!old||!['Rascunho','Enviada'].includes(old.status))throw Error('Proposta já encerrada.');if(values.vencimento<today())throw Error('O vencimento não pode ser anterior à emissão.');old.status='Aceita';const o=find('oportunidades',old.oportunidadeId);o.status='Ganha';db.propostas.filter(p=>p.oportunidadeId===o.id&&p.id!==old.id&&['Rascunho','Enviada'].includes(p.status)).forEach(p=>p.status='Recusada');let n=1;while(db.faturas.some(f=>f.numero===`FAT-${String(n).padStart(4,'0')}`))n++;db.faturas.push({id:id('FAT'),propostaId:old.id,numero:`FAT-${String(n).padStart(4,'0')}`,valor:old.valor,emissao:today(),vencimento:values.vencimento,status:'Pendente',pagaEm:'',notas:'',criadoEm:today()});},'Negócio conquistado! Fatura criada, pronta para acompanhar.');
+    else saved=await mutate(()=>{
       const r=old||{...Object.fromEntries(schemas[type].map(([k])=>[k,k==='valor'?0:''])),id:id(type.toUpperCase().slice(0,3)),criadoEm:today()};
       for(const [k,v] of Object.entries(values))r[k]=k==='valor'?Number(v):v.trim();
       if(!key){if(type==='prospects')r.status=values.status||'Novo';if(type==='oportunidades')r.status='Aberta';if(type==='propostas')r.status='Rascunho';db[type].push(r);}
-    },'Registro salvo. Exporte o Excel para atualizar sua planilha.');
+    },'Registro atualizado.');
     // Validation errors stay visible and preserve the form for correction.
-    if(!$('#notice').hasClass('alert-danger'))editor.hide();
+    if(saved)editor.hide();
   });
   function action(action,key,type){
+    if(busy||!store.user)return;
     const current=type||(['inicio','funil'].includes(page)?'prospects':page);
     if(action==='new')return showForm('prospects');
     if(action==='edit')return showForm(current,key);
@@ -372,51 +499,45 @@ $(function () {
   $('#content').on('click','[data-action]',function(){action(this.dataset.action,this.dataset.id,this.dataset.type);});
   $('#new-record').on('click',function(){showForm($(this).data('type'));});
   $('#content').on('input','#search',function(){query=this.value;renderRows();}).on('change','#status-filter',function(){filter=this.value;renderRows();});
-  function navigate(){page=Object.hasOwn(names,location.hash.slice(1))?location.hash.slice(1):'inicio';query='';filter='';render();}
-  $(window).on('hashchange',navigate);
+  function navigate(){page=Object.hasOwn(names,location.hash.slice(1))?location.hash.slice(1):'dashboard';query='';filter='';render();}
+  $('nav').on('click','a',event=>{if(busy)event.preventDefault();});
+  $(window).on('hashchange',()=>{if(!busy)navigate();});
   function loadDemo(){if(Object.values(db).some(a=>a.length)){notice('A base de exemplo só pode ser carregada com o CRM vazio.','warning');return;}confirmAction('Carregar dados fictícios para explorar o CRM? Eles serão identificados como base de exemplo.',()=>mutate(()=>{
     const common={email:'',telefone:'',notas:'',criadoEm:today()};
     db.prospects=[{...common,id:'PRO-DEMO-1',nome:'Marina Costa',empresa:'Estúdio Aurora',email:'marina@example.com',origem:'Indicação',status:'Novo',clienteId:''},{...common,id:'PRO-DEMO-2',nome:'Rafael Almeida',empresa:'Verde & Cia',origem:'LinkedIn',status:'Em contato',clienteId:''},{...common,id:'PRO-DEMO-3',nome:'Beatriz Lima',empresa:'Casa Botânica',origem:'Evento',status:'Convertido',clienteId:'CLI-DEMO-1'}];
     db.clientes=[{...common,id:'CLI-DEMO-1',nome:'Beatriz Lima',empresa:'Casa Botânica',email:'beatriz@example.com'},{...common,id:'CLI-DEMO-2',nome:'Lucas Santos',empresa:'Café Horizonte'}];
     db.oportunidades=[{id:'OP-DEMO-1',clienteId:'CLI-DEMO-1',titulo:'Identidade visual',valor:4800,previsao:plusDays(15),status:'Aberta',notas:'',criadoEm:today()},{id:'OP-DEMO-2',clienteId:'CLI-DEMO-2',titulo:'Consultoria de marca',valor:3200,previsao:today(),status:'Ganha',notas:'',criadoEm:today()}];
     db.propostas=[{id:'PROP-DEMO-1',oportunidadeId:'OP-DEMO-1',titulo:'Projeto de identidade visual',valor:4800,validade:plusDays(10),status:'Enviada',notas:'',criadoEm:today()},{id:'PROP-DEMO-2',oportunidadeId:'OP-DEMO-2',titulo:'Consultoria de marca',valor:3200,validade:today(),status:'Aceita',notas:'',criadoEm:today()}];
-    db.faturas=[{id:'FAT-DEMO-1',propostaId:'PROP-DEMO-2',numero:'FAT-0001',valor:3200,emissao:today(),vencimento:plusDays(30),status:'Pendente',pagaEm:'',notas:'',criadoEm:today()}];fileName='Base de exemplo (dados fictícios)';
-  },'Base fictícia carregada. Você pode exportá-la para conhecer o modelo Excel.'));}
-  async function exportExcel(){if(busy)return;busy=true;$('#export').prop('disabled',true);const snapshot=JSON.parse(JSON.stringify(db));try{
-    const workbook=new ExcelJS.Workbook();workbook.creator='Órbita CRM';workbook.created=new Date();
-    for(const [name,fields] of Object.entries(schemas)){
-      const sheet=workbook.addWorksheet(name);sheet.columns=fields.map(([key,header])=>({header,key,width:key==='id'||key.endsWith('Id')?45:key==='notas'?45:24}));
-      snapshot[name].forEach(r=>sheet.addRow(r));sheet.views=[{state:'frozen',ySplit:1}];sheet.autoFilter={from:'A1',to:{row:1,column:fields.length}};
-      sheet.getRow(1).font={bold:true,color:{argb:'FFFFFFFF'}};sheet.getRow(1).fill={type:'pattern',pattern:'solid',fgColor:{argb:'FF285C4D'}};
-      const col=fields.findIndex(([key])=>key==='valor');if(col>=0)sheet.getColumn(col+1).numFmt='"R$" #,##0.00';
-    }
-    const info=workbook.addWorksheet('LEIA-ME');[
-      ['Órbita CRM','Modelo v1'],['Como usar','Edite as abas mantendo os cabeçalhos e IDs. Importe o arquivo no CRM.'],['Relacionamentos','ClienteID, OportunidadeID e PropostaID referenciam os IDs das outras abas.'],['Datas','Use texto no formato AAAA-MM-DD. Datas nativas do Excel também são aceitas.'],['Valores','Use células numéricas, maiores que zero, com até duas casas decimais.'],['Status de prospects','Novo | Em contato | Convertido'],['Status de oportunidades','Aberta | Ganha | Perdida'],['Status de propostas','Rascunho | Enviada | Aceita | Recusada'],['Status de faturas','Pendente | Paga'],['Fluxo','Converta prospects e aceite propostas pelo CRM para manter os vínculos.'],['Privacidade','O aplicativo não transmite dados. Mantenha seu Excel e computador protegidos.'],['Faturas','Documentos de controle interno. Não são notas fiscais.'],['Limites','Importação: até 10 MB e 10.000 registros somados. Sem fórmulas ou macros.']
-    ].forEach(row=>info.addRow(row));info.getColumn(1).width=26;info.getColumn(2).width=115;
-    const buffer=await workbook.xlsx.writeBuffer();const blob=new Blob([buffer],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='orbita-crm-'+today()+'.xlsx';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
-    exported=JSON.stringify(snapshot);fileName=a.download;persist();notice('Excel gerado para download. Confirme que o arquivo foi salvo na sua pasta.');
-  }catch(e){notice('Não foi possível gerar o Excel: '+e.message,'danger');}finally{busy=false;$('#export').prop('disabled',false);}}
+    db.faturas=[{id:'FAT-DEMO-1',propostaId:'PROP-DEMO-2',numero:'FAT-0001',valor:3200,emissao:today(),vencimento:plusDays(30),status:'Pendente',pagaEm:'',notas:'',criadoEm:today()}];
+  },'Base fictícia carregada.'));}
+  async function exportExcel(){if(busy||!store.user)return;const url=URL.createObjectURL(new Blob([store.bytes],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}));const a=document.createElement('a');a.href=url;a.download='copia-'+store.handle.name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);notice('Cópia do último Excel salvo gerada para download.');}
   $('#export').on('click',exportExcel);
-  $('#import').on('click',()=>{if(!busy)$('#file-input').trigger('click');});
-  $('#file-input').on('change',async function(){const file=this.files[0];this.value='';if(!file||busy)return;if(!/\.xlsx$/i.test(file.name)||file.size>10*1024*1024){notice('Escolha um arquivo .xlsx com até 10 MB.','danger');return;}busy=true;$('#import').prop('disabled',true);try{
-    const workbook=new ExcelJS.Workbook();await workbook.xlsx.load(await file.arrayBuffer());const imported=empty();let count=0;
-    for(const [type,fields] of Object.entries(schemas)){
-      const sheet=workbook.getWorksheet(type);if(!sheet)throw Error('Aba obrigatória ausente: '+type+'. Exporte um modelo pelo CRM.');
-      const columns={};sheet.getRow(1).eachCell((cell,index)=>{if(typeof cell.value!=='string')throw Error(type+': cabeçalho inválido.');if(columns[cell.value])throw Error(type+': cabeçalho duplicado.');columns[cell.value]=index;});
-      for(const [,header]of fields)if(!columns[header])throw Error(type+': coluna ausente: '+header);
-      sheet.eachRow((row,index)=>{if(index===1)return;const r={};let any=false;for(const [key,header]of fields){let value=row.getCell(columns[header]).value;
-        if(value!==null&&value!==undefined&&value!=='')any=true;
-        if(value instanceof Date){if(Number.isNaN(value.getTime()))throw Error('Data inválida.');value=value.toISOString().slice(0,10);}
-        if(value!==null&&typeof value==='object')throw Error(type+': fórmulas, links e células complexas não são aceitos. Use valores simples.');
-        r[key]=key==='valor'?(typeof value==='number'?value:NaN):value===null||value===undefined?'':String(value).trim();
-      }if(any){imported[type].push(r);count++;if(count>10000)throw Error('Limite de 10.000 registros por arquivo.');}});
-    }
-    validate(imported);
-    confirmAction(`Importar ${count} registros de “${file.name}”? A base atual será substituída, incluindo dados fictícios. Exporte a base atual antes de confirmar se quiser guardar uma cópia.`,()=>{db=imported;fileName=file.name;exported=JSON.stringify(db);persist();render();notice('Excel importado e validado. Continue seu trabalho normalmente.');});
-  }catch(e){notice('Importação cancelada. Seus dados atuais foram preservados. '+e.message,'danger');}finally{busy=false;$('#import').prop('disabled',false);}});
-  $('#help').on('click',()=>{ $('#confirmation-title').text('Seus dados, no seu computador');$('#confirmation-text').html('<p>1. Cadastre contatos ou <strong>importe um Excel exportado pelo CRM</strong>.</p><p>2. Trabalhe no fluxo: prospect → cliente + oportunidade → proposta → fatura.</p><p>3. Clique em <strong>Exportar Excel</strong> e guarde a planilha na sua pasta ao terminar. O navegador baixa uma nova cópia: ele não altera automaticamente o arquivo original.</p><p>O cache deste navegador ajuda a recuperar seu trabalho, mas pode ser apagado e varia entre navegadores e caminhos do arquivo. Seu Excel é a cópia portátil dos dados. Evite trabalhar em duas janelas ao mesmo tempo.</p><p class="mb-0">Tudo funciona offline. Não há login, servidor, sincronização, envio de emails nem emissão de nota fiscal. Faturas são registros de controle comercial.</p>');pending=null;confirmation.show();});
-  window.addEventListener('beforeunload',event=>{if(JSON.stringify(db)!==exported&&Object.values(db).some(a=>a.length)){event.preventDefault();event.returnValue='';}});
-  window.addEventListener('storage',event=>{if(event.key===KEY)notice('A base mudou em outra janela. Exporte suas alterações antes de recarregar para evitar sobrescrever dados.','warning');});
+  function showAuth(){if(busy)return;store.logout();db=empty();$('#content').empty();$('#app-view').prop('hidden',true);$('#auth-view').prop('hidden',false);$('#login-form')[0].reset();$('#auth-file-name').text('Nenhuma planilha selecionada');$('#auth-title').text('Entre no seu CRM');$('#setup-fields').prop('hidden',true);$('#login-confirm').prop('required',false);$('#login-password').attr('autocomplete','current-password').removeAttr('minlength');$('#login-submit').prop('disabled',true).text('Entrar');$('#auth-notice').attr('class','alert alert-info').text('Abra sua planilha para entrar novamente.');$('#notice').addClass('d-none');}
+  $('#logout,#import').on('click',showAuth);
+  function authMessage(text,type='info'){$('#auth-notice').attr('class','alert alert-'+type).text(text);}
+  async function selectExcel(create){if(busy)return;if(!OrbitaExcel.supported()){authMessage('Este navegador não oferece gravação direta. Abra o CRM.html no Chrome ou Edge para computador.','warning');return;}
+    try{
+      // Invoke the native picker immediately inside the user's click gesture.
+      const handle=create?await window.showSaveFilePicker({suggestedName:'orbita-crm.xlsx',types:OrbitaExcel.fileTypes}):(await window.showOpenFilePicker({types:OrbitaExcel.fileTypes,multiple:false,mode:'readwrite'}))[0];
+      busy=true;$('#auth-view button,#login-form input').prop('disabled',true);authMessage('Abrindo e validando a planilha…');store.logout();
+      if(create)await store.prepareNew(handle);else await store.open(handle);
+      const setup=store.needsSetup;$('#auth-file-name').text(handle.name);$('#setup-fields').prop('hidden',!setup);$('#login-confirm').prop('required',setup);$('#login-password').attr('autocomplete',setup?'new-password':'current-password');if(setup)$('#login-password').attr('minlength','8');else $('#login-password').removeAttr('minlength');
+      $('#auth-title').text(setup?'Configure o primeiro acesso':'Entre no seu CRM');$('#login-submit').text(setup?'Criar acesso e entrar':'Entrar');$('#login-form')[0].reset();
+      authMessage(setup?'Esta planilha ainda não tem a aba usuarios. Defina o primeiro login e uma senha de pelo menos 8 caracteres. O cadastro será gravado no Excel.':'Planilha aberta. Informe seu login e senha cadastrados na aba usuarios.');
+    }catch(e){if(e.name!=='AbortError'){store.logout();$('#auth-file-name').text('Nenhuma planilha selecionada');authMessage(e.message,'danger');}}
+    finally{busy=false;$('#auth-view button,#login-form input').prop('disabled',false);$('#login-submit').prop('disabled',!store.handle);}
+  }
+  $('#open-excel').on('click',()=>selectExcel(false));$('#create-excel').on('click',()=>selectExcel(true));
+  $('#login-form').on('submit',async function(event){event.preventDefault();if(busy||!store.handle||!this.reportValidity())return;
+    const login=$('#login-name').val(),password=$('#login-password').val();if(store.needsSetup&&password!==$('#login-confirm').val()){authMessage('As senhas não coincidem.','danger');return;}
+    busy=true;$('#auth-view button').prop('disabled',true);
+    try{if(store.needsSetup)await store.setup(login,password,$('#login-display').val(),empty());db=await store.authenticate(login,password);$('#login-form')[0].reset();$('#auth-view').prop('hidden',true);$('#app-view').prop('hidden',false);$('#session-user').text(store.user.nome);$('#notice').addClass('d-none');navigate();}
+    catch(e){authMessage(e.message,'danger');$('#login-password,#login-confirm').val('');if(!store.needsSetup){$('#setup-fields').prop('hidden',true);$('#login-confirm').prop('required',false);$('#login-password').removeAttr('minlength');$('#login-submit').text('Entrar');}}
+    finally{busy=false;$('#auth-view button').prop('disabled',false);updateStatus();}
+  });
+  $('#help').on('click',()=>{ $('#confirmation-title').text('Trabalhando no seu Excel');$('#confirmation-text').html('<p>Abra ou crie seu Excel na tela de login e autorize a edição. Cada cadastro, conversão, proposta e pagamento é gravado <strong>no mesmo arquivo</strong>. Aguarde o indicador de gravação antes de fechar.</p><p>Use <strong>Baixar cópia</strong> para um backup. Mantenha a planilha fechada no Excel enquanto usa o CRM e evite editar o mesmo arquivo em várias janelas. Ao detectar mudança externa, o app pede que você saia e reabra o arquivo.</p><p>O login vem da aba <code>usuarios</code>. O app não mantém sessão nem dados no cache: ao reabrir, selecione o Excel e entre novamente. O login não criptografa a planilha.</p><p class="mb-0">A gravação direta exige Chrome ou Edge no computador. Não há servidor, sincronização ou emissão de nota fiscal.</p>');pending=null;confirmation.show();});
+  window.addEventListener('beforeunload',event=>{if(busy){event.preventDefault();event.returnValue='';}});
+  if(!OrbitaExcel.supported())authMessage('Para ler e gravar no mesmo Excel, abra este HTML no Chrome ou Edge para computador.','warning');
   navigate();
 });
 

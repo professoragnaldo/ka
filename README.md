@@ -1,51 +1,112 @@
-# Órbita — CRM local
+# Órbita — CRM local com Excel e login
 
-CRM em português para abrir diretamente no computador, sem servidor, instalação, conta ou internet. Interface em HTML, Bootstrap 5 e jQuery; planilhas `.xlsx` lidas e geradas com ExcelJS. Todas as bibliotecas estão incluídas em `vendor/`.
+HTML com Bootstrap 5 e jQuery, sem servidor, instalação ou internet. O arquivo **`CRM.html`** inclui todas as bibliotecas. Abra-o diretamente na pasta com **Chrome ou Edge para computador**.
 
-## Abrir
+## Começar
 
-1. Baixe **`CRM.html`**. Ele contém todos os estilos e bibliotecas necessários.
-2. Abra `CRM.html` com um navegador moderno (Chrome, Edge ou Firefox).
-3. Cadastre um prospect ou use **Experimentar com exemplos** com a base vazia.
-4. Ao terminar, clique em **Exportar Excel** e salve o arquivo na sua pasta.
-5. Para continuar em outro navegador ou computador, abra o HTML e use **Importar Excel**.
+1. Baixe `CRM.html` e abra com dois cliques no Chrome ou Edge.
+2. Clique em **Criar Excel**, escolha uma pasta e um nome `.xlsx` novo.
+3. Defina seu login, nome e uma senha de pelo menos 8 caracteres. Confirme a senha e clique em **Criar acesso e entrar**.
+4. Cadastre prospects, clientes, oportunidades e propostas. **Cada alteração é gravada no mesmo Excel**, sem precisar baixar e substituir o arquivo.
+5. Aguarde o indicador de gravação antes de fechar. Use **Baixar cópia** para um backup.
+6. Na próxima vez, clique em **Abrir Excel**, selecione a mesma planilha e entre com o login e a senha cadastrados nela.
 
-A versão `CRM.html` pode ser movida sozinha. Para desenvolvimento, `index.html` usa as pastas `assets/` e `vendor/`; mantenha essas pastas juntas. Não há requisições de rede em tempo de execução, fontes remotas, serviços de terceiros ou servidor web.
+O navegador pede acesso ao arquivo: autorize a edição. Não é possível escolher uma planilha silenciosamente apenas por seu caminho. Se a permissão for revogada, saia e reabra a planilha concedendo acesso. Firefox, Safari e navegadores móveis não oferecem a API exigida por este fluxo; o app informa a incompatibilidade e não simula uma gravação por download.
 
-## Fluxo
+Se escolher um arquivo que já contém dados em **Criar Excel**, a operação é recusada para evitar sobrescrevê-lo. Use **Abrir Excel** para uma base existente.
 
-- **Prospect**: nome, empresa, email, telefone, origem e observações; etapas Novo e Em contato.
-- **Conversão**: cria um cliente e uma oportunidade vinculados e preserva o prospect como Convertido. Informe o título e o valor estimado da oportunidade.
-- **Cliente**: permite cadastrar outras oportunidades para a mesma pessoa ou empresa.
-- **Oportunidade**: valor estimado, previsão e status. Pode receber várias propostas ou ser encerrada como Perdida.
-- **Proposta**: valor próprio, validade e observações. Pode ser marcada como enviada (sem enviar email), recusada ou aceita.
-- **Aceite**: marca a oportunidade como Ganha, recusa as propostas em aberto concorrentes e gera exatamente uma fatura pelo valor da proposta aceita. Informe o vencimento.
-- **Fatura**: número único, emissão, vencimento, valor e status Pendente/Paga. O pagamento registra recebimento integral; sua data pode ser corrigida na edição. Não há parcelas, estornos, impostos ou emissão de nota fiscal.
+## Usar sua planilha da primeira versão
 
-Propostas encerradas preservam seus dados comerciais. O app não exclui registros ou reabre negócios encerrados. Faturas são registros comerciais de controle interno, sem validade de documento fiscal. Valores usam reais (BRL).
+Abra um Excel **exportado pelo Órbita**. Os cabeçalhos e vínculos da versão anterior continuam válidos. Se ele ainda não tiver a aba `usuarios`, a tela oferece a criação explícita do primeiro acesso, preservando os registros existentes.
 
-## Excel e persistência
+Os antigos dados de recuperação do navegador não são carregados automaticamente. Se ainda precisar deles, exporte-os pela versão anterior antes de migrar. A nova versão não mantém dados ou senhas em `localStorage` e exige login a cada abertura/recarregamento.
 
-**O Excel é a cópia portátil dos dados.** O navegador não sobrescreve automaticamente o arquivo importado: Exportar Excel baixa uma nova cópia. Confirme o download e substitua seu arquivo anterior, se desejar, usando o gerenciador de arquivos.
+O HTML enviado como exemplo foi usado como referência para a API de arquivos (`showOpenFilePicker` e `createWritable`). O esquema de dados do Órbita foi mantido; planilhas com cabeçalhos próprios de outro CRM precisam de conversão para o modelo do Órbita antes de serem abertas.
 
-Há um cache de recuperação em `localStorage`, quando permitido. Esse cache pertence ao navegador e ao contexto do arquivo, pode mudar ao mover a pasta e pode ser removido ao limpar os dados do navegador. No modo privado, não conte com sua permanência. Se o cache não puder ser gravado, um aviso pede a exportação antes de fechar. O app avisa ao sair com alterações sem exportação. Evite editar em duas abas: não há controle de concorrência ou sincronização.
+## Login pela aba `usuarios`
 
-O arquivo exportado contém cinco abas de dados: `prospects`, `clientes`, `oportunidades`, `propostas`, `faturas`, e a aba `LEIA-ME`. Exporte uma base vazia para obter o modelo. Preserve os cabeçalhos e IDs. As colunas `ClienteID`, `OportunidadeID` e `PropostaID` ligam as entidades.
+Só um usuário existente e ativo nessa aba, com a senha correta, libera a interface e os dados do CRM. O login não diferencia maiúsculas e minúsculas; a senha diferencia. O botão **Sair** limpa a sessão e retira os dados da tela.
 
-A importação substitui toda a base após validação e confirmação. Exporte um backup antes. Arquivos inválidos não alteram os registros atuais. São verificados IDs únicos, vínculos, status, valores positivos com duas casas decimais, datas e coerência entre propostas aceitas, negócios ganhos e faturas. Datas devem estar em `AAAA-MM-DD` ou como datas nativas do Excel. Valores devem ser células numéricas. Texto é exibido como texto, sem executar HTML. Fórmulas e células complexas não são aceitas. Macros não são suportadas. Limites: arquivo `.xlsx` de até 10 MB, até 10.000 registros somados e até 10.000 caracteres por campo.
+Novos acessos criados pelo app usam **PBKDF2-HMAC-SHA-256**, salt aleatório de 16 bytes e 210.000 iterações. A senha original não é armazenada. A aba criada tem estes cabeçalhos:
 
-Não há criptografia, autenticação, controle de acesso ou backup remoto. Proteja a pasta e as planilhas com as permissões e ferramentas do seu computador. Nenhum dado de exemplo é carregado automaticamente.
+| Coluna | Conteúdo |
+| --- | --- |
+| `Login` | Nome único do usuário, sem distinguir maiúsculas/minúsculas |
+| `Nome` | Nome exibido na sessão |
+| `SenhaHash` | Hash hexadecimal de 64 caracteres |
+| `Salt` | Salt hexadecimal de 32 caracteres |
+| `Iteracoes` | 210000 para acessos gerados pelo app |
+| `Ativo` | `Sim` ou `Não`; vazio significa ativo |
 
-## Desenvolvimento e validação
+Para cadastrar outros usuários manualmente, feche o CRM, abra o Excel e acrescente a coluna **`Senha`** à aba `usuarios`. Em uma nova linha, informe `Login`, `Nome`, `Senha` e `Ativo=Sim`, deixando `SenhaHash`, `Salt` e `Iteracoes` vazios. Células `Login` e `Senha` devem ser texto, principalmente se começarem com zeros. Esse formato simples é aceito para compatibilidade, mas deixa a senha legível no Excel. Quando existe `SenhaHash`, ele tem prioridade sobre `Senha`. Remova o hash e salt antigos se optar por redefinir uma senha manualmente pela coluna `Senha`.
 
-Não é necessário build para usar ou editar a versão modular. Edite `index.html`, `assets/style.css` e `assets/app.js` e reabra a página. Para atualizar a versão de arquivo único, execute `python tools/build-standalone.py`. Não edite `CRM.html` manualmente: ele é gerado dessas fontes. A aplicação usa scripts clássicos, sem módulos, `fetch` ou APIs que exijam HTTP.
+Uma aba `usuarios` existente, porém inválida, vazia ou sem usuários ativos **não** libera a criação de outro acesso. Corrija a planilha para recuperar o acesso. Não há senha padrão, recuperação remota, gestão de permissões por papel ou cadastro público.
 
-Teste de ponta a ponta: `node tests/smoke.cjs`, com Playwright disponível no ambiente. Por padrão, ele abre o HTML por `file://`, bloqueia conexões HTTP, percorre o fluxo completo, exporta e reimporta Excel e verifica a rejeição de uma planilha inconsistente. Em navegadores gerenciados que bloqueiam `file://` por política, use `CHROMIUM_PATH=/usr/bin/chromium node tests/smoke.cjs --routed`: o Playwright fornece os mesmos arquivos diretamente do disco por interceptação, sem servidor ou acesso remoto. Esse modo valida a aplicação, mas não a política de abertura de arquivos do navegador do usuário. Use também `--standalone` para testar o arquivo único. O Playwright é necessário apenas para desenvolvimento, nunca para usar o CRM.
+**Limite do login local:** ele controla a entrada na interface, sem criptografar o Excel ou proteger contra quem pode editar o HTML/arquivo diretamente. Proteja a pasta com as permissões do sistema operacional. Ao criar o primeiro acesso em uma base antiga sem usuários, a autorização é a posse e a permissão de gravação sobre a planilha.
+
+## Dashboard
+
+A tela inicial **Dashboard** contém:
+
+- Total recebido, a receber e em atraso.
+- Valor do pipeline aberto, taxa de conquista e ticket médio dos negócios ganhos.
+- Gráfico de faturado × recebido, com os seis meses até o fim do período selecionado e uma tabela acessível com os valores.
+- Distribuição das oportunidades abertas, ganhas e perdidas.
+- Cinco clientes com maior faturamento e próximos recebimentos pendentes.
+- Filtros de data inicial/final e botão para todo o período.
+
+Recebidos são filtrados pela **data de pagamento**; faturas, pela **emissão**; oportunidades, pela **criação**, usando o seu status atual. A taxa de conquista é ganhas ÷ (ganhas + perdidas) desse recorte. O ticket médio usa os valores das propostas aceitas dos negócios ganhos. Pendências são os status atuais, não uma reconstrução histórica de saldos em datas passadas. O gráfico mostra apenas seis meses, mesmo se o filtro abranger um intervalo maior.
+
+## Fluxo comercial
+
+- **Prospect:** contato, empresa, email, telefone, origem e observações; etapas Novo e Em contato.
+- **Conversão:** cria um cliente e uma oportunidade, preservando o prospect como Convertido.
+- **Cliente:** permite criar outras oportunidades para a mesma pessoa/empresa.
+- **Oportunidade:** valor estimado, previsão e status; aceita várias propostas ou pode ser encerrada como Perdida.
+- **Proposta:** valor próprio, validade e observações; pode ser marcada como enviada (sem envio de email), recusada ou aceita.
+- **Aceite:** marca o negócio como Ganha, recusa propostas concorrentes em aberto e gera uma única fatura pelo valor aceito.
+- **Fatura:** número único, emissão, vencimento, valor e status Pendente/Paga; registra recebimento integral e permite corrigir a data de pagamento.
+
+Valores em BRL. Faturas são registros de controle comercial, sem emissão de nota fiscal. Não há parcelas, impostos, estornos, exclusão de registros ou reabertura de negócios encerrados.
+
+## Gravação e integridade
+
+A base fica no **Excel selecionado**, não no cache do navegador. O app só confirma uma alteração depois de concluir `write` e `close` do arquivo. Se a gravação falhar, a alteração em memória é desfeita e, quando aplicável, o formulário continua aberto para correção ou nova tentativa. Sem confirmação, confira o arquivo antes de fechar a sessão.
+
+O app compara SHA-256 do arquivo antes de salvar e verifica novamente após abrir o fluxo exclusivo de escrita. Se detectar mudança externa, recusa a alteração e orienta sair e reabrir o Excel. Isso reduz conflitos, mas não substitui controle de concorrência de um banco de dados: **use uma sessão por arquivo e mantenha a planilha fechada no Excel durante o uso do CRM**. Não há sincronização entre computadores ou usuários simultâneos.
+
+Abas de dados: `prospects`, `clientes`, `oportunidades`, `propostas`, `faturas`. Preserve seus cabeçalhos e IDs. As colunas `ClienteID`, `OportunidadeID` e `PropostaID` fazem os vínculos. Datas: `AAAA-MM-DD` ou datas nativas do Excel; valores: células numéricas positivas com até duas casas decimais. São validados IDs, relacionamentos, status, datas, propostas aceitas e faturas únicas.
+
+As abas do CRM são regeneradas ao gravar; sua formatação é padronizada. Colunas desconhecidas nessas abas são recusadas para evitar perda silenciosa de dados. Outras abas, incluindo `usuarios`, são mantidas pelo ExcelJS. Use planilhas simples do CRM: macros, objetos, gráficos avançados e recursos não suportados pelo ExcelJS não têm preservação garantida. Guarde um backup antes de migrar uma base personalizada.
+
+Limites: `.xlsx` de até 10 MB; até 10.000 registros comerciais, 1.000 usuários e 10.000 caracteres por campo. Não são aceitas fórmulas, links ou células complexas nas abas de dados/login. Texto informado pelo usuário é exibido sem executar HTML. Dados fictícios só são carregados mediante confirmação, na visão geral com base vazia, e também são gravados no Excel.
+
+## Desenvolvimento e testes
+
+Fontes: `index.html`, `assets/style.css`, `assets/app.js` e `assets/excel-store.js`. A versão modular exige manter `assets/` e `vendor/` junto ao HTML. Não há build obrigatório para usá-la.
+
+Para gerar o arquivo único, execute:
+
+```sh
+python tools/build-standalone.py
+```
+
+Com Playwright disponível no ambiente:
+
+```sh
+node tests/smoke.cjs
+node tests/smoke.cjs --standalone
+```
+
+Em Chromium gerenciado que bloqueia `file://`, a validação pode carregar os mesmos arquivos por interceptação, sem webserver ou conexão remota:
+
+```sh
+CHROMIUM_PATH=/usr/bin/chromium node tests/smoke.cjs --routed
+CHROMIUM_PATH=/usr/bin/chromium node tests/smoke.cjs --routed --standalone
+```
+
+Os testes substituem somente os seletores de arquivos por handles nativos em OPFS (armazenamento de arquivos do navegador). Exercitam leitura/gravação real de XLSX, autenticação, migração, fluxo comercial, dashboard, backup, falhas e conflitos. Não automatizam o diálogo nativo de escolha da pasta. O modo interceptado não comprova a política `file://` do navegador do usuário; a abertura direta e a concessão de permissão devem ser conferidas no computador de destino.
 
 ## Bibliotecas
 
-- Bootstrap 5.3.3 — MIT
-- jQuery 3.7.1 — MIT
-- ExcelJS 4.4.0 — MIT
-
-Arquivos oficiais obtidos por HTTPS via jsDelivr. Licenças em `vendor/LICENSE-*.txt`. As versões e hashes locais estão em `vendor/SHA256SUMS`. Nenhum CDN é acessado ao abrir o app.
+Bootstrap 5.3.3, jQuery 3.7.1 e ExcelJS 4.4.0, sob licença MIT. Arquivos oficiais locais em `vendor/`, licenças em `vendor/LICENSE-*.txt`, hashes em `vendor/SHA256SUMS`. A versão única embute também as licenças. Não há CDN, fontes remotas ou requisições de rede ao usar o CRM.

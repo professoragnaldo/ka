@@ -6,10 +6,20 @@
 <link rel="stylesheet" href="vendor/bootstrap.min.css"><link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<section id="auth-view" class="auth-view">
+<div class="auth-intro"><div class="brand"><span class="brand-symbol">◉</span> órbita<span class="brand-dot">.</span></div><div><div class="eyebrow">SEU CRM. SEU EXCEL.</div><h1>Boas conexões.<br>Grandes oportunidades.</h1><p>Da primeira conversa ao pagamento, com seus dados na sua pasta.</p><div class="auth-flow">Prospect <span>→</span> Cliente <span>→</span> Proposta <span>→</span> Fatura</div></div><small>Local · Offline · Sem servidor</small></div>
+<div class="auth-card"><div class="eyebrow">BEM-VINDO AO SEU ESPAÇO</div><h2 id="auth-title">Entre no seu CRM</h2><p class="text-muted">Abra sua planilha e entre com o usuário cadastrado nela.</p>
+<div id="auth-notice" class="alert alert-info" role="status">Use Chrome ou Edge no computador para gravar diretamente no Excel.</div>
+<div class="auth-file"><strong id="auth-file-name">Nenhuma planilha selecionada</strong><div class="d-flex gap-2 mt-3"><button type="button" id="open-excel" class="btn btn-primary">Abrir Excel</button><button type="button" id="create-excel" class="btn btn-light">Criar Excel</button></div></div>
+<form id="login-form"><div class="mb-3"><label for="login-name" class="form-label">Login</label><input id="login-name" name="login" class="form-control" autocomplete="username" maxlength="120" required></div><div class="mb-3"><label for="login-password" class="form-label">Senha</label><input id="login-password" name="password" class="form-control" type="password" autocomplete="current-password" maxlength="1000" required></div><div id="setup-fields" hidden><div class="mb-3"><label for="login-display" class="form-label">Seu nome</label><input id="login-display" class="form-control" maxlength="120" autocomplete="name"></div><div class="mb-3"><label for="login-confirm" class="form-label">Confirme a senha</label><input id="login-confirm" class="form-control" type="password" autocomplete="new-password"></div></div><button id="login-submit" class="btn btn-primary w-100" disabled>Entrar</button></form>
+<p class="auth-footnote">O login libera a interface. O arquivo Excel continua acessível a quem tiver permissão na pasta.</p></div>
+</section>
+<div id="app-view" hidden>
 <aside class="sidebar">
 <a href="#inicio" class="brand"><span class="brand-symbol">◉</span> órbita<span class="brand-dot">.</span></a>
 <div class="workspace-label">SEU ESPAÇO DE VENDAS</div>
 <nav aria-label="Navegação principal">
+<a href="#dashboard" data-page="dashboard"><span>▥</span> Dashboard</a>
 <a href="#inicio" data-page="inicio"><span>◫</span> Visão geral</a>
 <a href="#funil" data-page="funil"><span>▥</span> Funil de vendas</a>
 <div class="nav-label">RELACIONAMENTOS</div>
@@ -23,17 +33,18 @@
 <div class="sidebar-bottom"><span class="local-light"></span> 100% local e offline<p>Seus contatos. Seu computador.</p><button id="help" class="btn btn-sm btn-outline-light">Como salvar meus dados</button></div>
 </aside>
 <div class="main-shell">
-<header class="topbar"><div><span class="text-muted">Workspace</span><span class="breadcrumb-slash">/</span><span id="breadcrumb">Visão geral</span></div><span class="local-tag">● Ambiente local</span></header>
+<header class="topbar"><div><span class="text-muted">Workspace</span><span class="breadcrumb-slash">/</span><span id="breadcrumb">Visão geral</span></div><div class="session-actions"><span id="session-user" class="local-tag"></span><button id="logout" class="btn btn-light">Sair</button></div></header>
 <main>
 <div class="page-heading"><div><div class="eyebrow">MENOS PLANILHAS ABERTAS. MAIS CONEXÕES.</div><h1 id="page-title">Seu próximo negócio começa aqui.</h1><p id="page-subtitle">Acompanhe cada conversa, da primeira conexão à conquista.</p></div><button class="btn btn-primary" id="new-record">+ Novo prospect</button></div>
-<div class="file-bar"><div><span class="file-icon">▦</span><div><strong id="file-name">Sua base de vendas</strong><small id="save-status" role="status">Importe um Excel ou comece cadastrando um prospect.</small></div></div><div class="file-actions"><button id="import" class="btn btn-light">↑ Importar Excel</button><button id="export" class="btn btn-dark">↓ Exportar Excel</button></div></div>
-<input type="file" id="file-input" accept=".xlsx" hidden>
+<div class="file-bar"><div><span class="file-icon">▦</span><div><strong id="file-name">Sua base de vendas</strong><small id="save-status" role="status">As alterações são gravadas no arquivo aberto.</small></div></div><div class="file-actions"><button id="import" class="btn btn-light">Trocar Excel</button><button id="export" class="btn btn-dark">↓ Baixar cópia</button></div></div>
+
 <div id="notice" class="alert d-none" role="alert"></div>
 <div id="content"></div>
 <footer>Feito para aproximar pessoas e bons negócios.<span>Órbita CRM · Sem servidor. Sem nuvem.</span></footer>
 </main>
 </div>
+</div>
 <div class="modal fade" id="editor" tabindex="-1" aria-labelledby="editor-title" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><form id="record-form"><div class="modal-header"><h2 class="modal-title fs-5" id="editor-title"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body" id="editor-fields"></div><div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button><button type="submit" class="btn btn-primary">Salvar</button></div></form></div></div></div>
 <div class="modal fade" id="confirmation" tabindex="-1" aria-labelledby="confirmation-title" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="confirmation-title">Confirmar ação</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body" id="confirmation-text"></div><div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">Cancelar</button><button class="btn btn-primary" id="confirm-action">Confirmar</button></div></div></div></div>
-<script src="vendor/jquery.min.js"></script><script src="vendor/bootstrap.bundle.min.js"></script><script src="vendor/exceljs.min.js"></script><script src="assets/app.js"></script>
+<script src="vendor/jquery.min.js"></script><script src="vendor/bootstrap.bundle.min.js"></script><script src="vendor/exceljs.min.js"></script><script src="assets/excel-store.js"></script><script src="assets/app.js"></script>
 </body></html>
